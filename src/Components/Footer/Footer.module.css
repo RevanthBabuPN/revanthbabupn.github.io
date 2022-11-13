@@ -1,0 +1,66 @@
+.footer {
+	display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    min-height: 70px;
+    padding: 15px;
+    text-align: center;
+}
+
+.nav-links {
+	font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+	font-size: var(--font-xsmall);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	column-gap: 2rem;
+	row-gap: 0.25rem;
+	color: var(--light-secondary);
+	padding: 10px;
+}
+
+.credit {
+	color: var(--light-secondary);
+    font-family: var(--font-secondary);
+    font-size: var(--font-xsmall);
+    line-height: 1;
+}
+
+.socials {
+	display: none;
+}
+
+.socials ul {
+	display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.socials ul a {
+	padding: 10px;
+}
+
+.socials ul a svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) 
+{
+	.socials {
+		display: block;
+		width: 100%;
+		max-width: 270px;
+		margin: 0px auto 10px;
+		color: var(--light-secondary);
+	}
+}

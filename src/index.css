@@ -1,13 +1,77 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --font-primary: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+    --font-secondary: "Roboto Mono","SF Mono","Fira Code","Fira Mono",monospace;
+    --font-small: 14px;
+    --font-xsmall: 13px;
+    --font-medium: 16px;
+    --font-large: 18px;
+    --font-xlarge: 20px;
+    --font-xxlarge: 22px;
+    --dark-primary: #161616;
+    --primary: #252525;
+    --light-primary: #444444;
+    --lighter-primary: #717171;
+    --dark-secondary: #727272;
+    --secondary: #d7d7d7;
+    --light-secondary: #e0e0e0;
+    --lighter-secondary: #ffffff;
+  }
+
+/* :root {
+  --font-primary: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+  --font-secondary: "Roboto Mono","SF Mono","Fira Code","Fira Mono",monospace;
+  --font-small: 14px;
+  --font-xsmall: 13px;
+  --font-medium: 16px;
+  --font-large: 18px;
+  --font-xlarge: 20px;
+  --font-xxlarge: 22px;
+  --dark-primary: #020c1b;
+  --primary: #0a192f;
+  --light-primary: #112240;
+  --lighter-primary: #233554;
+  --dark-secondary: #495670;
+  --secondary: #8892b0;
+  --light-secondary: #a8b2d1;
+  --lighter-secondary: #ccd6f6;
+} */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding:0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+	margin: 0px;
+	width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-family: var(--font-primary);
+    font-size: var(--font-xlarge);
+    line-height: 1.3;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--dark-secondary);
+    border: 3px solid var(--primary);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+#root {
+	min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 100%;
 }

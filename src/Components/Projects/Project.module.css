@@ -1,0 +1,50 @@
+.project {
+	max-width: 90%;
+	margin: 0px auto;
+	font-family: var(--font-secondary);
+	font-size: 16px;
+	font-weight: 400;
+	padding: 25px 0;
+}
+
+.project-list {
+	max-width: 90%;
+	margin: 0px auto;
+	font-family: var(--font-secondary);
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.title {
+	font-size: 16px;
+	margin: 0;
+}
+
+.technologies {
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-top: 3px;
+}
+
+.description {
+  font-family: var(--font-primary);
+}
+
+.description-list-item {
+	display: flex;
+	margin-bottom: 5px;
+	/* padding-left: 30px; */
+}
+
+.point {
+	padding-left: 30px;
+}
+
+.title {
+	display: inline;
+}
+
+.link-icon {
+	margin-left: 10px;
+	color: #64ffda;
+}

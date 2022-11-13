@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+main {
+	margin: 0px auto;
+    width: 80%;
+    max-width: 1600px;
+    min-height: 100vh;
+	padding: 0px 0px 0px 150px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+section {
+	padding: 100px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.section-heading {
+	display: flex;
+	align-items: center;
+	margin: 10px 0px 40px 0px;
+    width: 100%;
+    font-size: clamp(26px,5vw,var(32px)); /*--fz-heading*/
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.section-heading::after {
+	content: "";
+    display: block;
+    position: relative;
+    width: 400px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: #ffffff40;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 1080px)
+{
+	.section-heading::after {
+		width: 200px;
+	}
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (max-width: 1080px)
+{
+	main {
+		padding: 0px 0px 0px 100px;
+	}
+}
+
+@media (max-width: 768px)
+{
+	main {
+		padding: 0px 0px 0px 50px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0px 0px 10px;
+    font-weight: 600;
+    color: var(--lighter-secondary);
+    line-height: 1.1;
 }
