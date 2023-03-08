@@ -1,0 +1,346 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "ThesisCenter API",
+    "description": "Fetch applications and submission files"
+  },
+  "servers": [
+    {
+      "url": "https://uscgradschool-test-thesiscenter.azurewebsites.net/api",
+      "description": "Test Server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Applications"
+    },
+    {
+      "name": "Authentication"
+    }
+  ],
+  "paths": {
+    "/api/Applications/applications/{date}": {
+      "parameters": [
+        {
+          "name": "date",
+          "description": "date string formatted as yyyy-mm-dd",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/date"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Applications"
+        ],
+        "summary": "Get applications",
+        "description": "Given a `date` provide all applications that reach finalized publishing information with the digital library (Status-8). Also updates the application status to Status-13.",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/applications"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Applications/modified-applications/{date}": {
+      "parameters": [
+        {
+          "name": "date",
+          "description": "date string formatted as yyyy-mm-dd",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/date"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Applications"
+        ],
+        "summary": "Get modified applications",
+        "description": "Given a date the API provides all applications that reach finalized publishing information with the digital library (Status-8) and have been modified on that date.",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/applications"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Applications/download/{submissionID}": {
+      "parameters": [
+        {
+          "name": "submissionID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/submissionID"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Applications"
+        ],
+        "summary": "Download",
+        "description": "Given a submissionID, returns the corresponding submission file.",
+        "responses": {
+          "200": {
+            "description": "Ssubmission file",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Submission file does not exist for the given submissionID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Authentication": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Authenticate",
+        "description": "Authenticates the user and returns a token which needs to used to call the APIs.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/user-credential"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "date": {
+        "description": "date formatted as yyyy-mm-dd",
+        "type": "string"
+      },
+      "submissionID": {
+        "description": "submissionID of the submission to download the file",
+        "type": "integer"
+      },
+      "applications": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/application"
+        }
+      },
+      "application": {
+        "type": "object",
+        "required": [
+          "applicationID",
+          "userID",
+          "thesisTitle",
+          "studentDegree",
+          "studentProgram",
+          "studentPostCode",
+          "creationDate",
+          "dissertationCompletionDate",
+          "dissertationDefenseDate",
+          "thesisProcessingStatus",
+          "thesisProcessingPreviousStatus",
+          "thesisProcessingStatusDate",
+          "submissions"
+        ],
+        "properties": {
+          "applicationID": {
+            "type": "integer"
+          },
+          "userID": {
+            "type": "integer"
+          },
+          "thesisTitle": {
+            "type": "string"
+          },
+          "studentDegree": {
+            "type": "string"
+          },
+          "studentProgram": {
+            "type": "string"
+          },
+          "studentPostCode": {
+            "type": "integer"
+          },
+          "creationDate": {
+            "type": "string"
+          },
+          "dissertationCompletionDate": {
+            "type": "string"
+          },
+          "dissertationDefenseDate": {
+            "type": "string"
+          },
+          "thesisProcessingStatus": {
+            "type": "string"
+          },
+          "thesisProcessingPreviousStatus": {
+            "type": "string"
+          },
+          "thesisProcessingStatusDate": {
+            "type": "string"
+          },
+          "submissions": {
+            "$ref": "#/components/schemas/submissions"
+          }
+        }
+      },
+      "submissions": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/submission"
+        }
+      },
+      "submission": {
+        "type": "object",
+        "required": [
+          "submissionID",
+          "revisionNumber",
+          "fileName",
+          "filePath",
+          "applicationID",
+          "processingStatus",
+          "lastModified"
+        ],
+        "properties": {
+          "submissionID": {
+            "type": "integer"
+          },
+          "revisionNumber": {
+            "type": "integer"
+          },
+          "fileName": {
+            "type": "string"
+          },
+          "filePath": {
+            "type": "string"
+          },
+          "applicationID": {
+            "type": "integer"
+          },
+          "processingStatus": {
+            "type": "string"
+          },
+          "lastModified": {
+            "type": "string"
+          }
+        }
+      },
+      "user-credential": {
+        "type": "object",
+        "required": [
+          "username",
+          "password"
+        ],
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "message"
+        ],
+        "properties": {
+          "message": {
+            "description": "A human readable error message",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
