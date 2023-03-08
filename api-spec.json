@@ -9,6 +9,10 @@
     {
       "url": "https://uscgradschool-test-thesiscenter.azurewebsites.net/api",
       "description": "Test Server"
+    },
+    {
+      "url": "https://uscgradschool-thesiscenter.azurewebsites.net/api",
+      "description": "Production Server"
     }
   ],
   "tags": [
@@ -36,8 +40,13 @@
         "tags": [
           "Applications"
         ],
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ],
         "summary": "Get applications",
-        "description": "Given a `date` provide all applications that reach finalized publishing information with the digital library (Status-8). Also updates the application status to Status-13.",
+        "description": "Given a `date`, provides all applications that have finalized publishing information with the digital library (Status-8). Also updates the application status to Status-13.",
         "responses": {
           "200": {
             "description": "Ok",
@@ -68,8 +77,13 @@
         "tags": [
           "Applications"
         ],
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ],
         "summary": "Get modified applications",
-        "description": "Given a date the API provides all applications that reach finalized publishing information with the digital library (Status-8) and have been modified on that date.",
+        "description": "Given a `date`, provides all applications that have finalized publishing information with the digital library (Status-8) and were modified on the given `date`.",
         "responses": {
           "200": {
             "description": "Ok",
@@ -98,6 +112,11 @@
       "get": {
         "tags": [
           "Applications"
+        ],
+        "security": [
+          {
+            "Bearer": [ ]
+          }
         ],
         "summary": "Download",
         "description": "Given a submissionID, returns the corresponding submission file.",
@@ -132,7 +151,7 @@
           "Authentication"
         ],
         "summary": "Authenticate",
-        "description": "Authenticates the user and returns a token which needs to used to call the APIs.",
+        "description": "Authenticates the user and returns a token which needs to be used to call the APIs.",
         "requestBody": {
           "required": true,
           "content": {
@@ -310,6 +329,13 @@
             "type": "string"
           }
         }
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
       }
     }
   }
