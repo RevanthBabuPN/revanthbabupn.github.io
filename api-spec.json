@@ -48,16 +48,6 @@
                 }
               }
             }
-          },
-          "500": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
           }
         }
       }
@@ -90,16 +80,6 @@
                 }
               }
             }
-          },
-          "500": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
           }
         }
       }
@@ -123,7 +103,7 @@
         "description": "Given a submissionID, returns the corresponding submission file.",
         "responses": {
           "200": {
-            "description": "Ssubmission file",
+            "description": "Submission file",
             "content": {
               "application/octet-stream": {
                 "schema": {
@@ -135,16 +115,6 @@
           },
           "404": {
             "description": "Submission file does not exist for the given submissionID",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Unexpected error",
             "content": {
               "application/json": {
                 "schema": {
