@@ -6,11 +6,11 @@
   },
   "servers": [
     {
-      "url": "https://uscgradschool-test-thesiscenter.azurewebsites.net/api",
+      "url": "https://uscgradschool-test-thesiscenter.azurewebsites.net",
       "description": "Test Server"
     },
     {
-      "url": "https://uscgradschool-thesiscenter.azurewebsites.net/api",
+      "url": "https://uscgradschool-thesiscenter.azurewebsites.net",
       "description": "Production Server"
     }
   ],
