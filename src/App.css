@@ -1,57 +1,64 @@
 main {
-	margin: 0px auto;
-    width: 80%;
-    max-width: 1600px;
-    min-height: 100vh;
-	padding: 0px 0px 0px 150px;
+  margin: 0px auto;
+  width: 80%;
+  max-width: 1600px;
+  min-height: 100vh;
+  padding: 0px 0px 75px 75px;
 }
 
 section {
-	padding: 100px 0;
+  padding: 100px 0;
 }
 
 .section-heading {
-	display: flex;
-	align-items: center;
-	margin: 10px 0px 40px 0px;
-    width: 100%;
-    font-size: clamp(26px,5vw,var(32px)); /*--fz-heading*/
+  display: flex;
+  align-items: center;
+  margin: 10px 0px 40px 0px;
+  width: 100%;
+  font-size: clamp(26px, 5vw, var(32px)); /*--fz-heading*/
 }
 
 .section-heading::after {
-	content: "";
-    display: block;
-    position: relative;
-    width: 400px;
-    height: 1px;
-    margin-left: 20px;
-    background-color: #ffffff40;
+  content: "";
+  display: block;
+  position: relative;
+  width: 400px;
+  height: 1px;
+  margin-left: 20px;
+  background-color: #ffffff40;
 }
 
-@media (max-width: 1080px)
-{
-	.section-heading::after {
-		width: 200px;
-	}
+@media (max-width: 1080px) {
+  .section-heading::after {
+    width: 200px;
+  }
 }
 
-@media (max-width: 1080px)
-{
-	main {
-		padding: 0px 0px 0px 100px;
-	}
+@media (max-width: 1080px) {
+  main {
+    padding: 0px 0px 50px 50px;
+  }
 }
 
-@media (max-width: 768px)
-{
-	main {
-		padding: 0px 0px 0px 50px;
-	}
+@media (max-width: 768px) {
+  main {
+    padding: 0px 0px 25px 25px;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 0px 0px 10px;
-    font-weight: 600;
-    color: var(--lighter-secondary);
-    line-height: 1.1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px 0px 10px;
+  font-weight: 600;
+  color: var(--lighter-secondary);
+  line-height: 1.1;
+}
+
+.arrow {
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
 }

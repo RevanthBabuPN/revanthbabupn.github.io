@@ -5,13 +5,17 @@ import styles from "./Experience.module.css";
 
 const EXPERIENCES = [
   {
-    role: "Student Programmer",
+    role: "Student Programmer - Full Stack Development",
     company: "University of Southern California",
     from: "Oct 2022",
     to: "Present",
+    skills: [
+      "Python, C#, React, Node.js, SQL, Azure Data Factory, Azure DevOps, Airflow, Git",
+    ],
     description: [
-      "Designed a REST Service for 10k+ PhD candidates' thesis to be automatically published to USC's Digital Library",
-      "Migrating the existing on-prem services to Azure cloud",
+      "Designed and implemented scalable RESTful APIs, enabling 10k+ PhD candidates' theses to be automatically published to USC’s Digital Library.",
+      "Streamlined the entire workflow using Azure Devops for CI/CD, reducing deployment time from 30 min to 5 min.",
+      "Revamped the existing on-prem web application and deployed to Azure cloud using Azure App Service.",
     ],
   },
   {
@@ -19,10 +23,11 @@ const EXPERIENCES = [
     company: "VMware",
     from: "Jan 2022",
     to: "Jul 2022",
+    skills: ["C", "C++", "VMware ESXi", "vSphere", "Network File System"],
     description: [
-      "Played a major role in the NFS Development team of ESXi by designing and developing MConnect to improve performance of NFS datastores",
-      "Increased IO performance by 3 to 4 times was seen in cloud environments with connection level bandwidth limitation",
-      "Collaborated with different teams to resolve bugs and ensure seamless working of the feature",
+      "Played a major role in the NFS Development team by designing and developing multipathing in ESXi kernel using C/C++ to improve performance of NFS datastores.",
+      "Improved IO performance by 3 to 4 times in cloud environments with connection level bandwidth limitation.",
+      "Collaborated with various teams to resolve bugs and ensure seamless working of the features.",
     ],
   },
   {
@@ -30,10 +35,11 @@ const EXPERIENCES = [
     company: "DataCore Software",
     from: "Jun 2021",
     to: "Nov 2021",
+    skills: ["Python", "OpenZFS", "Multithreading", "Git"],
     description: [
-      "Researched and analyzed data reduction techniques used in SANSymphony, a software defined storage solution",
-      "Built a lightweight tool based on FastCDC - a fast and efficient content-defined chunking approach for data deduplication",
-      "Multithreaded the space-savings estimation tool to saturate the reads from disk and maximize the throughput",
+      "Worked on OpenZFS data reduction techniques for SANSymphony, a software defined storage solution.",
+      "Built a lightweight tool in Python based on FastCDC, a fast and efficient approach, for data deduplication.",
+      "Multithreaded the space-savings estimation tool to saturate reads from disk, increasing throughput by 30%.",
     ],
   },
 ];
@@ -49,6 +55,7 @@ const ExperienceList = () => {
             company={x.company}
             from={x.from}
             to={x.to}
+            skills={x.skills}
             description={x.description}
             key={(x.company, x.role)}
           />

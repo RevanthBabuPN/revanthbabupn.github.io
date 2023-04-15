@@ -19,7 +19,10 @@ const Hero = () => {
           </p>
         </div>
         <div>
-          <a className={styles["contact"]} href={"#Contact"}>
+          <a
+            className={styles["contact"]}
+            href={"mailto:putturevanth@gmail.com"}
+          >
             Say Hi!
           </a>
         </div>

@@ -54,7 +54,7 @@ const SideElement = () => {
           </a>
         </li>
         <li>
-          <a href="mailto:" rel="noopener noreferrer">
+          <a href="mailto:putturevanth@gmail.com" rel="noopener noreferrer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"

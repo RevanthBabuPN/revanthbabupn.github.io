@@ -10,6 +10,11 @@ const MenuItems = [
     cName: "nav-links",
   },
   {
+    title: "Education",
+    url: "#education",
+    cName: "nav-links",
+  },
+  {
     title: "Experience",
     url: "#experience",
     cName: "nav-links",
@@ -21,7 +26,7 @@ const MenuItems = [
   },
   {
     title: "Contact",
-    url: "#contact",
+    url: "mailto:putturevanth@gmail.com",
     cName: "nav-links",
   },
 ];

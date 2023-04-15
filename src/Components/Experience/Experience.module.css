@@ -1,18 +1,25 @@
 .experience {
-	max-width: 90%;
-	margin: 0px auto;
-	font-family: var(--font-secondary);
-	font-size: 16px;
-	font-weight: 400;
-	padding: 25px 0;
+  max-width: 90%;
+  margin: 0px auto;
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 25px 0;
 }
 
 .experience-list {
-	max-width: 90%;
-	margin: 0px auto;
-	font-family: var(--font-secondary);
-	font-size: 16px;
-	font-weight: 400;
+  max-width: 90%;
+  margin: 0px auto;
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.skills {
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-top: 3px;
 }
 
 .company-name {
@@ -20,8 +27,8 @@
 }
 
 .role {
-	font-size: 16px;
-	margin: 0;
+  font-size: 16px;
+  margin: 0;
 }
 
 .range {
@@ -35,11 +42,11 @@
 }
 
 .description-list-item {
-	display: flex;
-	margin-bottom: 5px;
-	/* padding-left: 30px; */
+  display: flex;
+  margin-bottom: 5px;
+  /* padding-left: 30px; */
 }
 
 .point {
-	padding-left: 30px;
+  padding-left: 30px;
 }

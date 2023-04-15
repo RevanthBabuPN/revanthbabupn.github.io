@@ -1,14 +1,17 @@
 import React, { Fragment } from "react";
-import NavBar from "./Components/NavBar/NavBar";
-import About from "./Components/About/About";
-import Skills from "./Components/Skills/Skills";
-import SideElement from "./Components/UI/SideElement";
 
-import "./App.css";
-import Hero from "./Components/Hero/Hero";
-import Footer from "./Components/Footer/Footer";
+import About from "./Components/About/About";
+import EducationList from "./Components/Education/EducationList";
+import Skills from "./Components/Skills/Skills";
 import ExperienceList from "./Components/Experience/ExperienceList";
 import ProjectList from "./Components/Projects/ProjectList";
+
+import NavBar from "./Components/NavBar/NavBar";
+import Hero from "./Components/Hero/Hero";
+import SideElement from "./Components/UI/SideElement";
+import Footer from "./Components/Footer/Footer";
+
+import "./App.css";
 
 function App() {
   return (
@@ -19,6 +22,7 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <EducationList />
         <ExperienceList />
         <ProjectList />
       </main>
