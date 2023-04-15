@@ -6,12 +6,8 @@
   },
   "servers": [
     {
-      "url": "https://uscgradschool-test-thesiscenter.azurewebsites.net",
-      "description": "Test Server"
-    },
-    {
       "url": "https://uscgradschool-thesiscenter.azurewebsites.net",
-      "description": "Production Server"
+      "description": "API Server"
     }
   ],
   "tags": [
@@ -46,43 +42,6 @@
         ],
         "summary": "Get applications",
         "description": "Given a `date`, provides all applications that have finalized publishing information with the digital library (Status-8). Also updates the application status to Status-13.",
-        "responses": {
-          "200": {
-            "description": "Ok",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/applications"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Applications/modified-applications/{date}": {
-      "parameters": [
-        {
-          "name": "date",
-          "description": "date string formatted as yyyy-mm-dd",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "$ref": "#/components/schemas/date"
-          }
-        }
-      ],
-      "get": {
-        "tags": [
-          "Applications"
-        ],
-        "security": [
-          {
-            "Bearer": [ ]
-          }
-        ],
-        "summary": "Get modified applications",
-        "description": "Given a `date`, provides all applications that have finalized publishing information with the digital library (Status-8) and were modified on the given `date`.",
         "responses": {
           "200": {
             "description": "Ok",
