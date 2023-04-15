@@ -56,6 +56,43 @@
         }
       }
     },
+    "/api/Applications/applications/debug/{date}": {
+      "parameters": [
+        {
+          "name": "date",
+          "description": "date string formatted as yyyy-mm-dd",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/date"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Applications"
+        ],
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ],
+        "summary": "Get applications",
+        "description": "Given a `date`, provides all applications that have finalized publishing information with the digital library (Status-8). Does not update the application status to Status-13.",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/applications"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Applications/download/{submissionID}": {
       "parameters": [
         {
