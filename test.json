@@ -1,0 +1,337 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "ThesisCenter API",
+    "description": "URL - [https://uscgradschool-thesiscenter.azurewebsites.net](https://uscgradschool-thesiscenter.azurewebsites.net)"
+  },
+  "servers": [
+    {
+      "url": "https://uscgradschool-thesiscenter.azurewebsites.net"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Applications"
+    },
+    {
+      "name": "Authentication"
+    }
+  ],
+  "paths": {
+    "/api/Applications/applications/{date}": {
+      "parameters": [
+        {
+          "name": "date",
+          "description": "date string formatted as yyyy-mm-dd",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/date"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Applications"
+        ],
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ],
+        "summary": "Get applications",
+        "description": "Given a `date`, provides all applications that have finalized publishing information with the digital library (Status-8) and updates the application status to Status-13.",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/applications"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Applications/applications/debug/{date}": {
+      "parameters": [
+        {
+          "name": "date",
+          "description": "date string formatted as yyyy-mm-dd",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/date"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Applications"
+        ],
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ],
+        "summary": "Get applications",
+        "description": "Given a `date`, provides all applications that have finalized publishing information with the digital library (Status-8). Does not update the application status to Status-13.",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/applications"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Applications/download/{submissionID}": {
+      "parameters": [
+        {
+          "name": "submissionID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/submissionID"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Applications"
+        ],
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ],
+        "summary": "Download",
+        "description": "Given a submissionID, returns the corresponding submission file.",
+        "responses": {
+          "200": {
+            "description": "Submission file",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Submission file does not exist for the given submissionID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Authentication": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Authenticate",
+        "description": "Authenticates the user and returns a token which needs to be used to call the APIs.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/user-credential"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "date": {
+        "description": "date formatted as yyyy-mm-dd",
+        "type": "string"
+      },
+      "submissionID": {
+        "description": "submissionID of the submission to download the file",
+        "type": "integer"
+      },
+      "applications": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/application"
+        }
+      },
+      "application": {
+        "type": "object",
+        "required": [
+          "applicationID",
+          "userID",
+          "thesisTitle",
+          "studentDegree",
+          "studentProgram",
+          "studentPostCode",
+          "creationDate",
+          "dissertationCompletionDate",
+          "dissertationDefenseDate",
+          "thesisProcessingStatus",
+          "thesisProcessingPreviousStatus",
+          "thesisProcessingStatusDate",
+          "submissions"
+        ],
+        "properties": {
+          "applicationID": {
+            "type": "integer"
+          },
+          "userID": {
+            "type": "integer"
+          },
+          "thesisTitle": {
+            "type": "string"
+          },
+          "studentDegree": {
+            "type": "string"
+          },
+          "studentProgram": {
+            "type": "string"
+          },
+          "studentPostCode": {
+            "type": "integer"
+          },
+          "creationDate": {
+            "type": "string"
+          },
+          "dissertationCompletionDate": {
+            "type": "string"
+          },
+          "dissertationDefenseDate": {
+            "type": "string"
+          },
+          "thesisProcessingStatus": {
+            "type": "string"
+          },
+          "thesisProcessingPreviousStatus": {
+            "type": "string"
+          },
+          "thesisProcessingStatusDate": {
+            "type": "string"
+          },
+          "submissions": {
+            "$ref": "#/components/schemas/submissions"
+          }
+        }
+      },
+      "submissions": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/submission"
+        }
+      },
+      "submission": {
+        "type": "object",
+        "required": [
+          "submissionID",
+          "revisionNumber",
+          "fileName",
+          "filePath",
+          "applicationID",
+          "processingStatus",
+          "lastModified"
+        ],
+        "properties": {
+          "submissionID": {
+            "type": "integer"
+          },
+          "revisionNumber": {
+            "type": "integer"
+          },
+          "fileName": {
+            "type": "string"
+          },
+          "filePath": {
+            "type": "string"
+          },
+          "applicationID": {
+            "type": "integer"
+          },
+          "processingStatus": {
+            "type": "string"
+          },
+          "lastModified": {
+            "type": "string"
+          }
+        }
+      },
+      "user-credential": {
+        "type": "object",
+        "required": [
+          "username",
+          "password"
+        ],
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "message"
+        ],
+        "properties": {
+          "message": {
+            "description": "A human readable error message",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Enter the token with the `Bearer ` prefix, e.g. Bearer abcde12345"
+      }
+    }
+  }
+}
