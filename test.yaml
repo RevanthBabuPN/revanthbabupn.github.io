@@ -211,4 +211,4 @@ components:
     Bearer:
       type: http
       scheme: bearer
-      description: Enter the token with the `Bearer ` prefix, e.g. Bearer abcde12345
+      description: Enter the token with the `Bearer ` prefix in Authorization header, e.g. Bearer abcde12345
