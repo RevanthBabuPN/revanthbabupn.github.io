@@ -3,6 +3,7 @@ info:
   version: 1.0.0
   title: ThesisCenter API
   description: |
+    
     URL - [https://uscgradschool-thesiscenter.azurewebsites.net](https://uscgradschool-thesiscenter.azurewebsites.net)
     
     Swagger - [https://uscgradschool-thesiscenter.azurewebsites.net/swagger](https://uscgradschool-thesiscenter.azurewebsites.net/swagger)
@@ -211,4 +212,6 @@ components:
     Bearer:
       type: http
       scheme: bearer
-      description: Enter the token with the `Bearer ` prefix in Authorization header, e.g. Bearer abcde12345
+      description: |
+        Enter the token with the `Bearer ` prefix in Authorization header.
+        e.g. Bearer abcde12345
