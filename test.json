@@ -146,13 +146,13 @@
           "Authentication"
         ],
         "summary": "Authenticate",
-        "description": "Authenticates the user and returns a token which needs to be used to call the APIs.",
+        "description": "Authenticates the user using the provided API key and returns a token which needs to be used to call the APIs.",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/user-credential"
+                "$ref": "#/components/schemas/apikey"
               }
             }
           }
@@ -298,6 +298,17 @@
           }
         }
       },
+      "apikey": {
+        "type": "object",
+        "required": [
+          "apiKey"
+        ],
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          }
+        }
+      },
       "user-credential": {
         "type": "object",
         "required": [
@@ -330,7 +341,7 @@
       "Bearer": {
         "type": "http",
         "scheme": "bearer",
-        "description": "Enter the token with the `Bearer ` prefix, e.g. Bearer abcde12345"
+        "description": "Enter the token with the `Bearer ` prefix in Authorization header, e.g. Bearer abcde12345"
       }
     }
   }
