@@ -96,7 +96,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/user-credential'
+              $ref: '#/components/schemas/apikey'
       responses:
         '200':
           description: Ok
@@ -189,6 +189,13 @@ components:
         processingStatus:
           type: string
         lastModified:
+          type: string
+    apikey:
+      type: object
+      required:
+        - apiKey
+      properties:
+        apiKey:
           type: string
     user-credential:
       type: object
