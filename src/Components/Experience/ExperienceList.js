@@ -5,6 +5,19 @@ import styles from "./Experience.module.css";
 
 const EXPERIENCES = [
   {
+    role: "Software Engineer Intern",
+    company: "Cohesity",
+    from: "June 2023",
+    to: "Present",
+    skills: ["Distributed Systems, Go, C++, Python"],
+    description: [
+      "Working on distributed systems software in the product infrastructure team.",
+      "Modeled and implemented an extract, transform, predict pipeline in Go, achieving a remarkable 90% accuracy in predicting workload of various services running in the distributed cluster.",
+      "Worked on global scheduler for a distributed system of services to optimize foreground and background resource consumption, reducing SLA misses.",
+      "Created a Go package of time series models, built as a wrapper around the open source Prophet model.",
+    ],
+  },
+  {
     role: "Student Programmer - Full Stack Development",
     company: "University of Southern California",
     from: "Oct 2022",

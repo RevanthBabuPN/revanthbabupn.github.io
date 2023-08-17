@@ -14,8 +14,9 @@ const Hero = () => {
         </div>
         <div>
           <p>
+            <br />
             MS Computer Science @ University of Southern California
-            <br /> Ex - VMware
+            <br /> Ex - Cohesity, VMware
           </p>
         </div>
         <div>

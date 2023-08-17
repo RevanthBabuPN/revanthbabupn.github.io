@@ -5,7 +5,7 @@ import styles from "./Education.module.css";
 
 const EDUCATION = [
   {
-    degree: "Master of Science in Computer Science",
+    degree: "Master of Science in Computer Science (Honors)",
     university: "University of Southern California",
     from: "Aug 2022",
     to: "May 2024",
@@ -21,7 +21,7 @@ const EDUCATION = [
     to: "May 2022",
     description: [
       "Graduated with a GPA of 9.81/10 (First class with Honors)",
-      "Coursework: Data Structures and Algorithms, Operating System, Computer Networks, DBMS, Cloud Computing, Machine Learning, Design Patterns, Performance Engineering",
+      "Coursework: Data Structures and Algorithms, Operating System, Computer Networks, Cloud Computing, Machine Learning, Design Patterns, Performance Engineering",
     ],
   },
 ];

@@ -4,6 +4,7 @@ import styles from "./Skills.module.css";
 const SKILLS = [
   { name: "Python" },
   { name: "C / C++" },
+  { name: "Go" },
   { name: "HTML, CSS" },
   { name: "JavaScript / TypeScript" },
   { name: "SQL" },
