@@ -15,6 +15,15 @@ const PROJECTS = [
     link: "https://ieeexplore.ieee.org/abstract/document/9645747",
   },
   {
+    title: "Weenix Operating System",
+    technologies: "C, GDB, QEMU, Unix",
+    description: [
+      "Built a Unix-like fully functional toy operating system as part of the Operating Systems course at University of Southern California.",
+      "Implemented system calls, process/thread creation, virtual memory management, and virtual file system functionalities.",
+      "More info at - Brown University's Weenix OS handout ( https://github.com/brown-cs1690/handout/wiki/Weenix-Operating-System )",
+    ],
+  },
+  {
     title: "Event Finder App",
     technologies: "Python, Node.js, React, Google Cloud Platform",
     description: [
@@ -37,7 +46,7 @@ const PROJECTS = [
   {
     title: "English Premier League Prediction",
     technologies:
-      "Python, Hadoop Distributed File System, PySpark, Spark MLLib",
+      "Big Data, Hadoop Distributed File System (HDFS), Apache Spark, Spark MLLib",
     description: [
       "Analyzed English Premier League data and built a machine learning model using Spark MLLib that predicted the outcomes of EPL matches with a high degree of accuracy.",
       "Leveraged Spark-Streaming for data ingestion and Hadoop Distributed File System (HDFS) to store the data.",
@@ -48,6 +57,15 @@ const PROJECTS = [
     technologies: "Python, Flask, JavaScript, jQuery, MySQL",
     description: [
       "Developed a web application with features for course management, student and faculty management, feedback management, announcements",
+    ],
+    link: "https://github.com/RevanthBabuPN/PESU-APP#Readme",
+  },
+  {
+    title: "Python Mini Compiler",
+    technologies: "C, Lex, Yacc, Python",
+    description: [
+      "Mini Compiler for Python 3.x with support for for, while, function def constructs and other basic syntax",
+      "Implemented compiler optimizations like constant folding and propagation, dead code elimination, loop invariant code motion, common subexpression elimination",
     ],
     link: "https://github.com/RevanthBabuPN/PESU-APP#Readme",
   },

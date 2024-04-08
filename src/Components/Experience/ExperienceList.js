@@ -5,16 +5,26 @@ import styles from "./Experience.module.css";
 
 const EXPERIENCES = [
   {
-    role: "Software Engineer Intern",
+    role: "Software Engineer (Co-op) - ML Platform",
+    company: "Dragonfruit AI",
+    from: "Jan 2023",
+    to: "Present",
+    skills: ["Python, Flask, AWS, Docker, flyte"],
+    description: [
+      "Building a platform to review model performance and integrate it as an active learning pipleline in the ML platform.",
+      "Tuned and integrated YOLOv5 model into self-checkout-loss prevention application, improving the performance 10x"
+    ]
+  },
+  {
+    role: "Software Engineer Intern - Distributed Systems Infra",
     company: "Cohesity",
     from: "June 2023",
-    to: "Present",
+    to: "August 2023",
     skills: ["Distributed Systems, Go, C++, Python"],
     description: [
-      "Working on distributed systems software in the product infrastructure team.",
-      "Modeled and implemented an extract, transform, predict pipeline in Go, achieving a remarkable 90% accuracy in predicting workload of various services running in the distributed cluster.",
       "Worked on global scheduler for a distributed system of services to optimize foreground and background resource consumption, reducing SLA misses.",
-      "Created a Go package of time series models, built as a wrapper around the open source Prophet model.",
+      "Modeled and implemented an extract, transform, predict pipeline in Go, achieving a remarkable 90% accuracy in predicting workload of various services running in the distributed cluster.",
+      "Created a Go package of time series models as a wrapper around the open source Prophet model.",
     ],
   },
   {
@@ -23,11 +33,11 @@ const EXPERIENCES = [
     from: "Oct 2022",
     to: "Present",
     skills: [
-      "Python, C#, React, Node.js, SQL, Azure Data Factory, Azure DevOps, Airflow, Git",
+      "Python, React, SQL, Airflow, Azure",
     ],
     description: [
-      "Designed and implemented scalable RESTful APIs, enabling 10k+ PhD candidates' theses to be automatically published to USC’s Digital Library.",
-      "Streamlined the entire workflow using Azure Devops for CI/CD, reducing deployment time from 30 min to 5 min.",
+      "Deployed scalable REST APIs to automatically publish 10k+ PhD candidates' theses to USC Digital Library.",
+      "Streamlined the workflows using Azure DevOps CI/CD, reducing deployment time from 30 min to 5 min.",
       "Revamped the existing on-prem web application and deployed to Azure cloud using Azure App Service.",
     ],
   },
@@ -38,7 +48,7 @@ const EXPERIENCES = [
     to: "Jul 2022",
     skills: ["C", "C++", "VMware ESXi", "vSphere", "Network File System"],
     description: [
-      "Played a major role in the NFS Development team by designing and developing multipathing in ESXi kernel using C/C++ to improve performance of NFS datastores.",
+      "Designed and developed multipathing in ESXi kernel to improve performance of NFS datastores.",
       "Improved IO performance by 3 to 4 times in cloud environments with connection level bandwidth limitation.",
       "Collaborated with various teams to resolve bugs and ensure seamless working of the features.",
     ],

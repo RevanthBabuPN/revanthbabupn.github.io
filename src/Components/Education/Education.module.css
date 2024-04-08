@@ -26,20 +26,67 @@
 
 .range {
   font-size: 14px;
+  margin-top: 3px;
+}
+
+.location {
+  font-size: 14px;
   margin-bottom: 15px;
   margin-top: 3px;
 }
+
+.content {
+	font-size: 14px;
+}
+
+.gpa {
+  margin-top: 3px;
+  margin-bottom: 15px;
+}
+
+.gpa-key {
+  font-weight: 600;
+}
+
+.coursework {
+  margin-top: 3px;
+  margin-bottom: 15px;
+}
+
+.coursework-key {
+  font-weight: 600;
+}
+
+.position {
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+.position-item {
+	margin-bottom: 5px;
+}
+
+.position-title {
+	font-weight: 600;
+}
+
+.position-description {
+	margin-top: 5px;
+}
+
+  
+.position-description-list-item {
+	display: flex;
+	/* padding-left: 30px; */
+}
+
 
 .description {
   font-family: var(--font-primary);
 }
 
-.description-list-item {
-	display: flex;
-	margin-bottom: 5px;
-	/* padding-left: 30px; */
+.point {
+	padding-top: 3px;
+	/* padding-left: 5px; */
 }
 
-.point {
-	padding-left: 30px;
-}
