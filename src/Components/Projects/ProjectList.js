@@ -44,9 +44,9 @@ const PROJECTS = [
     link: "https://restaurant-recommender-webapp.herokuapp.com/",
   },
   {
-    title: "English Premier League Prediction",
+    title: "English Premier League Prediction - Big Data",
     technologies:
-      "Big Data, Hadoop Distributed File System (HDFS), Apache Spark, Spark MLLib",
+      "Apache Spark, Spark MLLib, Hadoop Distributed File System (HDFS)",
     description: [
       "Analyzed English Premier League data and built a machine learning model using Spark MLLib that predicted the outcomes of EPL matches with a high degree of accuracy.",
       "Leveraged Spark-Streaming for data ingestion and Hadoop Distributed File System (HDFS) to store the data.",

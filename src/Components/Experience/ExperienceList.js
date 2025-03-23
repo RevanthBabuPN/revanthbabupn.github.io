@@ -5,11 +5,21 @@ import styles from "./Experience.module.css";
 
 const EXPERIENCES = [
   {
-    role: "Software Engineer (Co-op) - ML Platform",
+    role: "Software Engineer",
+    company: "Doordash Inc. ",
+    from: "Oct 2024",
+    to: "Present",
+    skills: ["Kotlin, Cassandra, Kafka, Kubernetes, AWS"],
+    description: [
+      "Engineering the doordash order-service platform to support new product features at scale.",
+    ],
+  },
+  {
+    role: "Software Engineer - ML Platform",
     company: "Dragonfruit AI",
     from: "Jan 2023",
-    to: "Present",
-    skills: ["Python, Flask, AWS, Docker, flyte"],
+    to: "Oct 2024",
+    skills: ["Python, Flask, elasticsearch, Qdrant,AWS, Docker"],
     description: [
       "Building a platform to review model performance and integrate it as an active learning pipleline in the ML platform.",
       "Tuned and integrated YOLOv5 model into self-checkout-loss prevention application, improving the performance 10x"
@@ -28,10 +38,10 @@ const EXPERIENCES = [
     ],
   },
   {
-    role: "Student Programmer - Full Stack Development",
+    role: "Student Software Engineer - Full Stack Development",
     company: "University of Southern California",
     from: "Oct 2022",
-    to: "Present",
+    to: "May 2024",
     skills: [
       "Python, React, SQL, Airflow, Azure",
     ],
@@ -54,11 +64,11 @@ const EXPERIENCES = [
     ],
   },
   {
-    role: "Software Intern",
+    role: "Software Engineer Intern",
     company: "DataCore Software",
     from: "Jun 2021",
     to: "Nov 2021",
-    skills: ["Python", "OpenZFS", "Multithreading", "Git"],
+    skills: ["Python", "OpenZFS", "Multithreading"],
     description: [
       "Worked on OpenZFS data reduction techniques for SANSymphony, a software defined storage solution.",
       "Built a lightweight tool in Python based on FastCDC, a fast and efficient approach, for data deduplication.",

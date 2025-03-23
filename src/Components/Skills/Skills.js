@@ -3,8 +3,8 @@ import styles from "./Skills.module.css";
 
 const SKILLS = [
   { name: "Python" },
-  { name: "C / C++" },
   { name: "Go" },
+  { name: "C / C++" },
   { name: "HTML, CSS" },
   { name: "JavaScript / TypeScript" },
   { name: "SQL" },
