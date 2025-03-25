@@ -18,10 +18,11 @@ const PROJECTS = [
     title: "Weenix Operating System",
     technologies: "C, GDB, QEMU, Unix",
     description: [
-      "Built a Unix-like fully functional toy operating system as part of the Operating Systems course at University of Southern California.",
+      "Built a Unix-like fully functional operating system as part of the Operating Systems course at University of Southern California.",
       "Implemented system calls, process/thread creation, virtual memory management, and virtual file system functionalities.",
-      "More info at - Brown University's Weenix OS handout ( https://github.com/brown-cs1690/handout/wiki/Weenix-Operating-System )",
+      "More info at - Brown University's Weenix OS handout",
     ],
+    link: "https://github.com/brown-cs1690/handout/wiki/Weenix-Operating-System"
   },
   {
     title: "Event Finder App",
