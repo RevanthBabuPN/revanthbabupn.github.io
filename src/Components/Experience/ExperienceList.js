@@ -11,7 +11,7 @@ const EXPERIENCES = [
     to: "Present",
     skills: ["Kotlin, Cassandra, Kafka, Kubernetes, AWS"],
     description: [
-      "Engineering the doordash order-service platform to support new product features at scale.",
+      "Engineering the order-service platform to support product features at scale.",
     ],
   },
   {
